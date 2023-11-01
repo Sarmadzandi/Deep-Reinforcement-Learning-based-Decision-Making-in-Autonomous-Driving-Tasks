@@ -7,10 +7,15 @@ We use [highwayEnv](https://github.com/Farama-Foundation/HighwayEnv) for this pr
 
 ## Action Space
 In this environment, there are 5 Discrete Meta-Actions. Let us explain each of them:
+
 0: 'Lane-Left'
+
 1: 'IDLE'
+
 2: 'Lane-Right'
+
 3: 'Faster'
+
 4: 'Slower'
 
 ## State Space
