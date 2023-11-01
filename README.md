@@ -49,7 +49,10 @@ Below are the average reward diagrams for the highway-fast-v0 task using the DQN
 
 ![image](https://github.com/Sarmadzandi/Decision-Making-in-Autonomous-Driving-Tasks/assets/44917340/5ba23876-b866-42da-ac41-353449ae4622)
 
+
 https://github.com/Sarmadzandi/Decision-Making-in-Autonomous-Driving-Tasks/assets/44917340/1c77c4c0-b4d5-415e-afbc-02f0a181e7a5
+
+https://github.com/Sarmadzandi/Decision-Making-in-Autonomous-Driving-Tasks/assets/44917340/123d34c8-780e-4af0-a43b-b8f48a7e41ee
 
 Transfer learning is a technique that helps us achieve a higher average reward more quickly. This is because it allows us to converge faster and reduce our regret. The reason for this improvement is that we start with a better initial weighting for the network. By using the weights from a similar task as the starting point, we can estimate the network's weights more accurately. This enables the network to converge faster, minimize the loss, and achieve better results. Additionally, transfer learning can reduce the variance by up to five times when executed.
 
