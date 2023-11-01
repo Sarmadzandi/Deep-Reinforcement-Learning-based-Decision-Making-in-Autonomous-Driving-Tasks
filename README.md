@@ -45,4 +45,38 @@ We applied the DQN algorithm to the merge-v0 task, and as shown in the graph, th
 
 https://github.com/Sarmadzandi/Decision-Making-in-Autonomous-Driving-Tasks/assets/44917340/992e83ff-4718-4f5c-adf0-30152425714d
 
+Below are the average reward diagrams for the highway-fast-v0 task using the DQN algorithm. One diagram is with random initial weighting, and the other is with the initial weighting of the weights taught by the merge-v0 task (Transfer Learning).
+
+![image](https://github.com/Sarmadzandi/Decision-Making-in-Autonomous-Driving-Tasks/assets/44917340/5ba23876-b866-42da-ac41-353449ae4622)
+
+https://github.com/Sarmadzandi/Decision-Making-in-Autonomous-Driving-Tasks/assets/44917340/1c77c4c0-b4d5-415e-afbc-02f0a181e7a5
+
+Transfer learning is a technique that helps us achieve a higher average reward more quickly. This is because it allows us to converge faster and reduce our regret. The reason for this improvement is that we start with a better initial weighting for the network. By using the weights from a similar task as the starting point, we can estimate the network's weights more accurately. This enables the network to converge faster, minimize the loss, and achieve better results. Additionally, transfer learning can reduce the variance by up to five times when executed.
+
+In contrast to the previous part, we use state instead of observation in this section. Additionally, due to the use of images, we utilize convolution layers in this network. It is important to note that each observation is obtained by calculating the difference between two rendered images.
+
+![image](https://github.com/Sarmadzandi/Decision-Making-in-Autonomous-Driving-Tasks/assets/44917340/8338a98e-29c0-4544-aeb1-78cb8e12ef97)
+
+The DQN algorithm with CNN network (observation first approach) has been found to perform better than the DQN algorithm with linear network and state (second approach). It has earned more average reward in all episodes except the initial episodes, and this difference is statistically significant. In fact, we reached a p value of 2.95e-45, which is less than alpha equal to 0.05. Additionally, the variance of 5 executions in the first approach is also less than the second approach. However, it's worth noting that this superiority doesn't always apply, and the DQN algorithm with observation won't always perform better than the DQN algorithm with state. If the observation can be estimated to have the characteristics of the state, they may be better than when we train the algorithm with the state.
+
+
+https://github.com/Sarmadzandi/Decision-Making-in-Autonomous-Driving-Tasks/assets/44917340/af35234e-ff2a-440f-98bf-fe6a9edca7f5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
