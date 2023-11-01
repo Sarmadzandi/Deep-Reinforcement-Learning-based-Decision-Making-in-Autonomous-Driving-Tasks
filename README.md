@@ -43,3 +43,4 @@ We applied the DQN algorithm to the merge-v0 task, and as shown in the graph, th
 
 ![image](https://github.com/Sarmadzandi/Decision-Making-in-Autonomous-Driving-Tasks/blob/main/Images/1-Merge-task-state.png)
 
+![video](https://github.com/Sarmadzandi/Decision-Making-in-Autonomous-Driving-Tasks/blob/main/Videos/merge_observation_CNN.mp4)
