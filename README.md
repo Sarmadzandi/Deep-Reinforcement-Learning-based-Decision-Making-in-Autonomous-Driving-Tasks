@@ -27,7 +27,7 @@ Here's an example of what a state would look like:
 
 ![image](https://github.com/Sarmadzandi/Decision-Making-in-Autonomous-Driving-Tasks/assets/44917340/cf0645a8-fb38-4db5-9433-a553801347c2)
 
-** Reward Function
+## Reward Function
 The reward function in the highway-enva environment is obtained from the two components of car speed and collision with other cars. Environmental rewards are normalized in the range between 0 and 1. Also, the components of Vmin, Vmax, and V are respectively the lowest speed, the highest speed, and the instantaneous speed of the vehicle. Coefficients a and b are also adjusting the speed bonus and avoiding collisions with other cars.
 
 ![image](https://github.com/Sarmadzandi/Decision-Making-in-Autonomous-Driving-Tasks/assets/44917340/efda065d-4906-466a-ac7d-a07f59ca3e61)
