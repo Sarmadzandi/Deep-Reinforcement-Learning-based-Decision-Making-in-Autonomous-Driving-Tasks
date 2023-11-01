@@ -39,7 +39,7 @@ To solve it, we utilize the Deep Q-Learning Network (DQN) algorithm, with the fo
 
 
 ## Results
-We applied the DQN algorithm to the merge-v0 task, and as shown in the graph, the average agent's rewards increased over time, reaching almost 14 by episode 3600.
+We applied the DQN algorithm to the merge-v0 task, and as shown in the plot, the average agent's rewards increased over time, reaching almost 14 by episode 3600.
 
 ![image](https://github.com/Sarmadzandi/Decision-Making-in-Autonomous-Driving-Tasks/blob/main/Images/1-Merge-task-state.png)
 
