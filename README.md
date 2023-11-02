@@ -1,6 +1,6 @@
 # Decision-Making in Autonomous Driving Tasks
 
-In this repository, we will explore the Deep Q-Learning Network (DQN) algorithm and implement it on autonomous driving merge task. 
+In this repository, we will explore the Deep Q-Learning Network (DQN) algorithm and implement it on autonomous driving merge and highway-fast tasks. 
 
 ## Environment
 We use [HighwayEnv](https://github.com/Farama-Foundation/HighwayEnv) for this project. 
