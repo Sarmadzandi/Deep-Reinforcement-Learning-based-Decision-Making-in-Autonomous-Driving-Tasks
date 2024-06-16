@@ -1,6 +1,12 @@
 # Decision-Making in Autonomous Driving Tasks
 
-In this repository, we will explore the Deep Q-Learning Network (DQN) algorithm and implement it on autonomous driving merge, highway-fast, and intersection tasks. 
+![GitHub stars](https://img.shields.io/github/stars/sarmadzandi/Decision-Making-in-Autonomous-Driving-Tasks)
+![GitHub forks](https://img.shields.io/github/forks/sarmadzandi/Decision-Making-in-Autonomous-Driving-Tasks)
+![GitHub issues](https://img.shields.io/github/issues/sarmadzandi/Decision-Making-in-Autonomous-Driving-Tasks)
+![GitHub license](https://img.shields.io/github/license/sarmadzandi/Decision-Making-in-Autonomous-Driving-Tasks)
+
+## Introduction
+In this repository, we will explore the Deep Q-Learning Network (DQN) algorithm and implement it on autonomous driving merge, highway-fast, and intersection tasks.
 
 ## Environment
 We use [HighwayEnv](https://github.com/Farama-Foundation/HighwayEnv) for this project. 
@@ -8,18 +14,14 @@ We use [HighwayEnv](https://github.com/Farama-Foundation/HighwayEnv) for this pr
 ## Action Space
 In this environment, there are 5 Discrete Meta-Actions:
 
-0: 'Lane-Left'
-
-1: 'IDLE'
-
-2: 'Lane-Right'
-
-3: 'Faster'
-
-4: 'Slower'
+- 0: 'Lane-Left'
+- 1: 'IDLE'
+- 2: 'Lane-Right'
+- 3: 'Faster'
+- 4: 'Slower'
 
 ## State Space
-In this environment, each state is a continuous 5x5 matrix. The first row of the matrix represents the agent vehicle (also known as the ego vehicle), while the other rows represent other vehicles. The first column of the matrix indicates the presence or absence of vehicles in the current state and can only take a value of 0 or 1. The second and third columns of the matrix, along with the first row, show the position of the agent vehicle in the x and y directions. In contrast, the second and third columns of the other rows show the position of the surrounding vehicles in the x and y directions relative to the agent vehicle. The third and fourth columns of all rows display the speed of the corresponding vehicle relative to the agent vehicle. All values in the matrix are normalized between -1 and 1. 
+In this environment, each state is a continuous 5x5 matrix. The first row of the matrix represents the agent vehicle (also known as the ego vehicle), while the other rows represent other vehicles. The first column of the matrix indicates the presence or absence of vehicles in the current state and can only take a value of 0 or 1. The second and third columns of the matrix, along with the first row, show the position of the agent vehicle in the x and y directions. In contrast, the second and third columns of the other rows show the position of the surrounding vehicles in the x and y directions relative to the agent vehicle. The third and fourth columns of all rows display the speed of the corresponding vehicle relative to the agent vehicle. All values in the matrix are normalized between -1 and 1.
 
 Here's an example of what a state would look like:
 
@@ -37,14 +39,16 @@ we aim to implement the Deep Q-Learning Network (DQN) algorithm, with the follow
 
 
 ## Results
-We applied the DQN algorithm to the merge-v0 task, and the average Reward during the learning episodes is shown Below:
+We applied the DQN algorithm to the merge-v0 task, and the average Reward during the learning episodes is shown below:
 
+### Merge-v0 Task
 * Average Reward during the learning episodes for merge-v0 task
 
 ![image](https://github.com/Sarmadzandi/Decision-Making-in-Autonomous-Driving-Tasks/blob/main/Images/1-Merge-task-state.png)
 
 https://github.com/Sarmadzandi/Decision-Making-in-Autonomous-Driving-Tasks/assets/44917340/992e83ff-4718-4f5c-adf0-30152425714d
 
+### Highway-Fast Task
 Below is the average reward diagram for the highway-fast-v0 task using the DQN algorithm. One curve is with random initial weighting, and the other is with the initial weighting of the weights taught by the merge-v0 task (Transfer Learning).
 
 * Average Reward during the learning episodes for highway-fast task
@@ -56,8 +60,9 @@ https://github.com/Sarmadzandi/Decision-Making-in-Autonomous-Driving-Tasks/asset
 
 https://github.com/Sarmadzandi/Decision-Making-in-Autonomous-Driving-Tasks/assets/44917340/123d34c8-780e-4af0-a43b-b8f48a7e41ee
 
-As it is shown, when we use transfer learning, we get closer to the average reward faster. The speed of our convergence has increased and regret has decreased. 
+As it is shown, when we use transfer learning, we get closer to the average reward faster. The speed of our convergence has increased and regret has decreased.
 
+### CNN Network and Observation
 In contrast to the previous part, we use observation instead of state in this section. Additionally, due to the use of images, we utilize convolution layers in this network. It is important to note that each observation is obtained by calculating the difference between two rendered images.
 
 * Average reward during learning episodes for merge-v0 task with state, and CNN network and observation.
