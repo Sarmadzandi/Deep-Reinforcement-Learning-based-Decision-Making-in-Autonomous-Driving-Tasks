@@ -1,4 +1,4 @@
-# Decision-Making in Autonomous Driving Tasks
+# Deep Reinforcement Learning based Decision-Making in Autonomous Driving Tasks
 
 ![GitHub stars](https://img.shields.io/github/stars/sarmadzandi/Decision-Making-in-Autonomous-Driving-Tasks)
 ![GitHub forks](https://img.shields.io/github/forks/sarmadzandi/Decision-Making-in-Autonomous-Driving-Tasks)
