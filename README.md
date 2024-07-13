@@ -13,6 +13,7 @@
 - [State Space](#state-space)
 - [Reward Function](#reward-function)
 - [Deep Q-Learning Network (DQN) Algorithm](#deep-q-learning-network-dqn-algorithm)
+- [Usage](#usage)
 - [Results](#results)
   - [Merge-v0 Task](#merge-v0-task)
   - [Highway-Fast Task](#highway-fast-task)
@@ -480,10 +481,9 @@ In this section, we use convolutional neural networks (CNNs) and image-based obs
 
 The DQN algorithm with CNN performs better than the DQN with linear networks and state matrices. It has earned more average rewards in all episodes except the initial episodes. However, this advantage is not guaranteed, and the performance depends on the quality of the observations. So, The DQN algorithm with observation won't always perform better than the DQN algorithm with state. If the observation can be estimated to have the characteristics of the state, they may be better than when we train the algorithm with the state.
 
+## Feedback
 
-
-
-
+If you have any feedback, please reach out to us at sarmadzandi@gmail.com
 
 
 
