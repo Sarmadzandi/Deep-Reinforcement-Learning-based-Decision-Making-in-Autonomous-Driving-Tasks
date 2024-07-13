@@ -25,17 +25,38 @@ In this environment, each state is a continuous 5x5 matrix. The first row of the
 
 Here's an example of what a state would look like:
 
-![image](https://github.com/Sarmadzandi/Decision-Making-in-Autonomous-Driving-Tasks/assets/44917340/cf0645a8-fb38-4db5-9433-a553801347c2)
+| Vehicle      | x     | y     | vx    | vy    |
+|--------------|-------|-------|-------|-------|
+| ego-vehicle  | 0.05  | 0.04  | 0.75  | 0     |
+| vehicle 1    | -0.1  | 0.04  | 0.6   | 0     |
+| vehicle 2    | 0.13  | 0.08  | 0.675 | 0     |
+| ...          | ...   | ...   | ...   | ...   |
+| vehicle V    | 0.222 | 0.105 | 0.9   | 0.025 |
 
 ## Reward Function
 The reward function in the Highway-Env environment is obtained from car speed and collision with other cars. Environmental rewards are normalized in the range between 0 and 1. Also, the components of Vmin, Vmax, and V are respectively the lowest speed, the highest speed, and the instantaneous speed of the vehicle. Coefficients a and b also adjust the speed bonus and avoid collisions with other cars.
 
-![image](https://github.com/Sarmadzandi/Decision-Making-in-Autonomous-Driving-Tasks/assets/44917340/efda065d-4906-466a-ac7d-a07f59ca3e61)
+$$
+R(s, a)=a \frac{v-v_{\min }}{v_{\max }-v_{\min }}-b \text { collision }
+$$
 
 ## DRL Algorithm
 we aim to implement the Deep Q-Learning Network (DQN) algorithm, with the following hyperparameters.
 
-![image](https://github.com/Sarmadzandi/Decision-Making-in-Autonomous-Driving-Tasks/assets/44917340/5d581a95-e4fa-4474-97df-4d1397962e53)
+| Parameter                           | Value  |
+|-------------------------------------|--------|
+| BUFFER_SIZE                         | 10000  |
+| BATCH_SIZE                          | 64     |
+| GAMMA                               | 0.99   |
+| UPDATE_EVERY (how often update the network) | 4      |
+| Learning rate (LR)                  | 0.0005 |
+| α (Parameter of Q-learning update equation) | 0.001  |
+| Epsilon start                       | 1      |
+| Epsilon end                         | 0.001  |
+| Epsilon decay                       | 0.995  |
+| Number of iterations (runs)         | 5      |
+| Number of episodes                  | 3600   |
+| Max step                            | 10000  |
 
 
 ## Results
