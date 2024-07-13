@@ -357,7 +357,7 @@ class DQN():
 
 ## Usage
 
-**Training and Evaluating with state-based observations on `merge-v0`:**
+**Training and Evaluating with `state-based` observations on `merge-v0`:**
    ```python
    # Initialize DQN agent with linear network
    env_name = 'merge-v0'
@@ -374,7 +374,7 @@ class DQN():
    show_and_plot().show_video(directory=video_path, file_name='merge.mp4')
    ```
 
-**Training and Evaluating with state-based observations on `highway-fast-v0`:**
+**Training and Evaluating with `state-based` observations on `highway-fast-v0`:**
    ```python
    # Initialize DQN agent with linear network
    env_name = 'highway-fast-v0'
@@ -391,7 +391,7 @@ class DQN():
    show_and_plot().show_video(directory=video_path, file_name='fastHighway.mp4')
    ```
 
-**Training and Evaluating with image-based observations on `merge-v0`:**
+**Training and Evaluating with `image-based` observations on `merge-v0`:**
    ```python
    # Initialize DQN agent with CNN network
    env_name = 'merge-v0'
@@ -408,7 +408,7 @@ class DQN():
    show_and_plot().show_video(directory=video_path, file_name="merge_observation_CNN.mp4")
    ```
 
-**Training and Evaluating with image-based observations on `highway-fast-v0`:**
+**Training and Evaluating with `image-based` observations on `highway-fast-v0`:**
    ```python
    # Initialize DQN agent with CNN network
    env_name = 'highway-fast-v0'
@@ -423,6 +423,23 @@ class DQN():
 
    # Show video
    show_and_plot().show_video(directory=video_path, file_name="fast_observation_CNN.mp4")
+   ```
+
+**Transfer learning from `merge-v0` on `highway-fast-v0`:**
+   ```python
+   env_name_source = 'merge-v0'
+   env_name_destination = 'highway-fast-v0'
+   env = gym.make(env_name_destination, render_mode='rgb_array')
+   dqn_fastHighway_transferred = DQN(env, env_name_destination, model_path_destination, data_path, network_type='linear', env_name_source=env_name_source, model_path_source=model_path_source, transfer_episode=3600)
+
+   # Training
+   df_reward_dqn_fastHighway_transferred = dqn_fastHighway_transferred.train_with_state(n_iteration=[1, 2, 3, 4, 5], n_training_episodes=3600, max_step=10000)
+    
+   # Evaluating
+   sum_rewards = dqn_fastHighway_transferred.evaluation(video_path+"fastHighway_transferred_from_merge.mp4", evaluate_type='state', iter_num=4, evaluate_episode_num=3600, use_saved_model=True)
+
+   # Show video
+   show_and_plot().show_video(directory=video_path, file_name="fastHighway_transferred_from_merge.mp4")
    ```
 
 ---
